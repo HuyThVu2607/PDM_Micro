@@ -34,7 +34,7 @@ Ensure you have the correct **Silicon Labs** development board (e.g., **BGM220**
 1. **Clone the Repository**:
     - Clone the project to your local machine:
       ```bash
-      git clone https://github.com/your-username/PDM_Micro.git
+      git clone https://github.com/HuyThVu2607/PDM_Micro.git
       ```
 2. **Open the Project in Simplicity Studio**:
     - Launch **Simplicity Studio** and open the cloned project directory.
