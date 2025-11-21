@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ASCII"?>
+<device:XMLDevice xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:device="http://www.silabs.com/ss/hwconfig/document/device.ecore" name="pin_tool.BGM220SC12WGA" partId="mcu.arm.efr32.bg22.bgm220sc12wga" contextId="com.silabs.sdk.stack.sisdk:2025.6.2._-110525931">
+  <mode name="DefaultMode">
+    <property object="DefaultMode" propertyId="mode.diagramLocation" value="100, 100"/>
+    <property object="PC01" propertyId="pin.name" value=""/>
+    <property object="PC01" propertyId="pin.reserve" value="Reserved"/>
+    <property object="PC02" propertyId="pin.name" value=""/>
+    <property object="PC03" propertyId="pin.name" value=""/>
+    <property object="PDM" propertyId="ABModule.selectedRequirement" value="pdm%T%SL_MIC_PDM%T%sl_mic_pdm_config.h"/>
+    <property object="PDM" propertyId="ABPeripheral.included" value="true"/>
+    <property object="PORTIO" propertyId="portio.pdm.enable.clk" value="Enabled"/>
+    <property object="PORTIO" propertyId="portio.pdm.enable.dat0" value="Enabled"/>
+    <property object="PORTIO" propertyId="portio.pdm.location.clk" value="35"/>
+    <property object="PORTIO" propertyId="portio.pdm.location.dat0" value="34"/>
+  </mode>
+  <modeTransition>
+    <property object="RESET &#x2192; DefaultMode" propertyId="modeTransition.source" value="RESET"/>
+    <property object="RESET &#x2192; DefaultMode" propertyId="modeTransition.target" value="DefaultMode"/>
+  </modeTransition>
+</device:XMLDevice>

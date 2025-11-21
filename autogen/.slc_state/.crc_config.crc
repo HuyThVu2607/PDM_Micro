@@ -1,0 +1,11 @@
+#CRC Codes for initially generated config files -- do not modify!
+SEGGER_RTT_Conf.h=-96194652
+dmadrv_config.h=1207334949
+sl_clock_manager_oscillator_config.h=-1424913272
+sl_clock_manager_tree_config.h=-155168389
+sl_core_config.h=-119586893
+sl_device_init_dcdc_config.h=-1580606003
+sl_device_init_emu_config.h=622680131
+sl_memory_manager_region_config.h=-132681117
+sl_mic_pdm_config.h=666598036
+sl_sleeptimer_config.h=1360009810

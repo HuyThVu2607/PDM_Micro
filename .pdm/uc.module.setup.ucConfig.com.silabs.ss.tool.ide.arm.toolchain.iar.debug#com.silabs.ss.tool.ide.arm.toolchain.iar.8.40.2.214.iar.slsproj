@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="uc.module.setup.ucConfig.com.silabs.ss.tool.ide.arm.toolchain.iar.debug#com.silabs.ss.tool.ide.arm.toolchain.iar:8.40.2.214.iar" propertyScope="project">
+  <folder name="config">
+    <file name="sl_memory_manager_region_config.h" generated="true" linked="false"/>
+    <file name="sl_clock_manager_oscillator_config.h" generated="true" linked="false"/>
+    <file name="sl_clock_manager_tree_config.h" generated="true" linked="false"/>
+    <file name="sl_core_config.h" generated="true" linked="false"/>
+    <file name="sl_device_init_dcdc_config.h" generated="true" linked="false"/>
+    <file name="sl_device_init_emu_config.h" generated="true" linked="false"/>
+    <file name="sl_mic_pdm_config.h" generated="true" linked="false"/>
+    <file name="dmadrv_config.h" generated="true" linked="false"/>
+    <file name="sl_sleeptimer_config.h" generated="true" linked="false"/>
+    <file name="SEGGER_RTT_Conf.h" generated="true" linked="false"/>
+  </folder>
+  <includePath uri="studio:/project/config"/>
+</project>

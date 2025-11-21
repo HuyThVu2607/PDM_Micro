@@ -1,0 +1,940 @@
+﻿###############################################################################
+#
+# IAR ELF Linker V8.40.2.214/W32 for ARM                  21/Nov/2025  23:13:25
+# Copyright 2007-2019 IAR Systems AB.
+#
+#    Output file  =  mox_v1.0.out
+#    Map file     =
+#        C:/Users/huyvu/OneDrive -
+#        hcmut.edu.vn/Desktop/Freelance/MOX_Fw/mox_v1_ext/mox_v1.0/IAR ARM -
+#        Debug/mox_v1.0.map
+#    Command line =
+#        ./simplicity_sdk_2025.6.2/util/third_party/segger/systemview/SEGGER/SEGGER_RTT.o
+#        ./simplicity_sdk_2025.6.2/util/third_party/segger/systemview/SEGGER/SEGGER_RTT_printf.o
+#        ./simplicity_sdk_2025.6.2/platform/service/sleeptimer/src/sl_sleeptimer.o
+#        ./simplicity_sdk_2025.6.2/platform/service/sleeptimer/src/sl_sleeptimer_hal_burtc.o
+#        ./simplicity_sdk_2025.6.2/platform/service/sleeptimer/src/sl_sleeptimer_hal_prortc.o
+#        ./simplicity_sdk_2025.6.2/platform/service/sleeptimer/src/sl_sleeptimer_hal_rtcc.o
+#        ./simplicity_sdk_2025.6.2/platform/service/sleeptimer/src/sl_sleeptimer_hal_timer.o
+#        ./simplicity_sdk_2025.6.2/platform/service/sl_main/src/sl_main_init.o
+#        ./simplicity_sdk_2025.6.2/platform/service/sl_main/src/sl_main_init_memory.o
+#        ./simplicity_sdk_2025.6.2/platform/service/sl_main/src/sl_main_process_action.o
+#        ./simplicity_sdk_2025.6.2/platform/service/memory_manager/src/sl_memory_manager_region.o
+#        ./simplicity_sdk_2025.6.2/platform/service/interrupt_manager/src/sl_interrupt_manager_cortexm.o
+#        ./simplicity_sdk_2025.6.2/platform/service/device_manager/src/sl_device_clock.o
+#        ./simplicity_sdk_2025.6.2/platform/service/device_manager/src/sl_device_gpio.o
+#        ./simplicity_sdk_2025.6.2/platform/service/device_manager/src/sl_device_peripheral.o
+#        ./simplicity_sdk_2025.6.2/platform/service/device_manager/devices/sl_device_peripheral_hal_efr32xg22.o
+#        ./simplicity_sdk_2025.6.2/platform/service/device_manager/clocks/sl_device_clock_efr32xg22.o
+#        ./simplicity_sdk_2025.6.2/platform/service/device_init/src/sl_device_init_dcdc_s2.o
+#        ./simplicity_sdk_2025.6.2/platform/service/device_init/src/sl_device_init_emu_s2.o
+#        ./simplicity_sdk_2025.6.2/platform/service/clock_manager/src/sl_clock_manager.o
+#        ./simplicity_sdk_2025.6.2/platform/service/clock_manager/src/sl_clock_manager_hal_s2.o
+#        ./simplicity_sdk_2025.6.2/platform/service/clock_manager/src/sl_clock_manager_init.o
+#        ./simplicity_sdk_2025.6.2/platform/service/clock_manager/src/sl_clock_manager_init_hal_s2.o
+#        ./simplicity_sdk_2025.6.2/platform/peripheral/src/sl_hal_gpio.o
+#        ./simplicity_sdk_2025.6.2/platform/emlib/src/em_burtc.o
+#        ./simplicity_sdk_2025.6.2/platform/emlib/src/em_cmu.o
+#        ./simplicity_sdk_2025.6.2/platform/emlib/src/em_emu.o
+#        ./simplicity_sdk_2025.6.2/platform/emlib/src/em_gpio.o
+#        ./simplicity_sdk_2025.6.2/platform/emlib/src/em_ldma.o
+#        ./simplicity_sdk_2025.6.2/platform/emlib/src/em_msc.o
+#        ./simplicity_sdk_2025.6.2/platform/emlib/src/em_pdm.o
+#        ./simplicity_sdk_2025.6.2/platform/emlib/src/em_rtcc.o
+#        ./simplicity_sdk_2025.6.2/platform/emlib/src/em_system.o
+#        ./simplicity_sdk_2025.6.2/platform/emlib/src/em_timer.o
+#        ./simplicity_sdk_2025.6.2/platform/emdrv/dmadrv/src/dmadrv.o
+#        ./simplicity_sdk_2025.6.2/platform/driver/gpio/src/sl_gpio.o
+#        ./simplicity_sdk_2025.6.2/platform/common/src/sl_assert.o
+#        ./simplicity_sdk_2025.6.2/platform/common/src/sl_core_cortexm.o
+#        ./simplicity_sdk_2025.6.2/platform/Device/SiliconLabs/BGM22/Source/startup_bgm22.o
+#        ./simplicity_sdk_2025.6.2/platform/Device/SiliconLabs/BGM22/Source/system_bgm22.o
+#        ./simplicity_sdk_2025.6.2/hardware/driver/mic/src/sl_mic_pdm.o
+#        ./autogen/sl_event_handler.o ./app.o ./main.o -o mox_v1.0.out --config
+#        "C:\Users\huyvu\OneDrive -
+#        hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\autogen\linkerfile.icf"
+#        --no_wrap_diagnostics --map "C:/Users/huyvu/OneDrive -
+#        hcmut.edu.vn/Desktop/Freelance/MOX_Fw/mox_v1_ext/mox_v1.0/IAR ARM -
+#        Debug/mox_v1.0.map"
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+define block application with fixed order { ro section .intvec, ro };
+define block text_application_ram_init
+   with alignment = 8 { ro code section text_application_ram_init };
+define block text_ram_init
+   with alignment = 8 { block text_application_ram_init };
+"application":
+       place at start of [from 0x0 to 0x5'5fff] {
+          block application, block text_ram_init };
+define block storage with alignment = 8K { section INTERNAL_STORAGE };
+define block nvm with alignment = 8K { section SIMEE };
+"storage_regions":
+       place at end of [from 0x0 to 0x5'5fff] { block storage, block nvm };
+define block CSTACK with alignment = 8 { section .stack };
+define block application_ram with fixed order { block CSTACK, rw };
+"application_ram":
+       place at start of [from 0x2000'0000 to 0x2000'7fff] {
+          block application_ram };
+define block text_application_ram
+   with alignment = 8 { rw code section text_application_ram };
+define block text_ram
+   with fixed order, alignment = 8 { block text_application_ram };
+"ram_code":
+       place in [from 0x2000'0000 to 0x2000'7fff] { block text_ram };
+do not initialize { section .noinit, section .stack, section .heap };
+initialize by copy { rw };
+keep { section .intvec };
+
+No sections matched the following patterns:
+
+  ro code section text_application_ram_init  in block text_application_ram_init
+  rw code section text_application_ram       in block text_application_ram
+  section .heap                              in block HEAP
+  section INTERNAL_STORAGE                   in block storage
+  section SIMEE                              in block nvm
+
+
+  Section                 Kind         Address    Size  Object
+  -------                 ----         -------    ----  ------
+"application", part 1 of 2:                     0x4e68
+  application                              0x0  0x4e68  <Block>
+    .intvec               const            0x0   0x140  startup_bgm22.o [4]
+    .rodata               const          0x140   0x420  pow64.o [21]
+    .rodata               const          0x560     0xc  sl_device_peripheral_hal_efr32xg22.o [13]
+    .rodata               const          0x56c     0xc  sl_device_peripheral_hal_efr32xg22.o [13]
+    .rodata               const          0x578     0x4  sl_device_clock_efr32xg22.o [12]
+    .rodata               const          0x57c     0x4  sl_device_clock_efr32xg22.o [12]
+    .rodata               const          0x580     0x4  sl_device_clock_efr32xg22.o [12]
+    .rodata               const          0x584     0x4  sl_device_clock_efr32xg22.o [12]
+    .rodata               const          0x588    0x28  sl_clock_manager_init_hal_s2.o [10]
+    .rodata               const          0x5b0    0x44  logf.o [21]
+    .text                 ro code        0x5f4   0x1c4  SEGGER_RTT.o [19]
+    .text                 ro code        0x7b8     0x6  ABImemclr.o [22]
+    .text                 ro code        0x7be    0x3a  zero_init3.o [22]
+    .text                 ro code        0x7f8    0x18  ABImemcpy_small.o [22]
+    .text                 ro code        0x810    0x66  ABImemset.o [22]
+    .text                 ro code        0x878   0x364  SEGGER_RTT_printf.o [19]
+    .text                 ro code        0xbdc    0x58  sl_sleeptimer.o [18]
+    text_core_timecritical9387
+                          ro code        0xc34     0xc  sl_core_cortexm.o [5]
+    .text                 ro code        0xc40   0x12c  sl_sleeptimer_hal_rtcc.o [18]
+    text_sleeptimer_timecritical5893
+                          ro code        0xd6c    0x1c  sl_sleeptimer_hal_rtcc.o [18]
+    text_sleeptimer_timecritical5785
+                          ro code        0xd88    0x20  sl_sleeptimer_hal_rtcc.o [18]
+    text_core_timecritical7363
+                          ro code        0xda8     0xa  sl_core_cortexm.o [5]
+    .text                 ro code        0xdb4   0x106  I64DivMod_small.o [22]
+    .text                 ro code        0xeba     0x2  sl_assert.o [5]
+    text_clock_manager_timecritical2380
+                          ro code        0xebc     0x6  sl_clock_manager.o [10]
+    .text                 ro code        0xec4   0x124  em_rtcc.o [8]
+    .text                 ro code        0xfe8   0x11c  sl_interrupt_manager_cortexm.o [15]
+    text_sleeptimer_timecritical64151
+                          ro code       0x1104    0x8c  sl_sleeptimer.o [18]
+    text_device_peripheral_timecritical01805
+                          ro code       0x1190     0x4  sl_device_peripheral.o [14]
+    text_clock_manager_timecritical1352
+                          ro code       0x1194     0xc  sl_clock_manager.o [10]
+    .text                 ro code       0x11a0     0x2  I64DivZer.o [22]
+    text_clock_manager_timecritical2674
+                          ro code       0x11a4    0x2c  sl_clock_manager_hal_s2.o [10]
+    text_sleeptimer_timecritical68131
+                          ro code       0x11d0    0x34  sl_sleeptimer.o [18]
+    text_sleeptimer_timecritical67128
+                          ro code       0x1204    0x3c  sl_sleeptimer.o [18]
+    text_sleeptimer_timecritical72149
+                          ro code       0x1240    0xc0  sl_sleeptimer.o [18]
+    text_sleeptimer_timecritical59101
+                          ro code       0x1300    0x34  sl_sleeptimer_hal_rtcc.o [18]
+    text_clock_manager_timecritical2561
+                          ro code       0x1334    0xc2  sl_clock_manager_hal_s2.o [10]
+    .text                 ro code       0x13f8    0x3c  sl_clock_manager_hal_s2.o [10]
+    text_sleeptimer_timecritical5354
+                          ro code       0x1434    0x10  sl_sleeptimer_hal_rtcc.o [18]
+    text_sleeptimer_timecritical5570
+                          ro code       0x1444    0x64  sl_sleeptimer_hal_rtcc.o [18]
+    text_sleeptimer_timecritical60109
+                          ro code       0x14a8    0x10  sl_sleeptimer_hal_rtcc.o [18]
+    text_sleeptimer_timecritical73152
+                          ro code       0x14b8    0x30  sl_sleeptimer.o [18]
+    text_sleeptimer_timecritical66125
+                          ro code       0x14e8    0x3c  sl_sleeptimer.o [18]
+    text_sleeptimer_timecritical65121
+                          ro code       0x1524    0x4c  sl_sleeptimer.o [18]
+    text_system_timecritical20216
+                          ro code       0x1570    0x3c  system_bgm22.o [4]
+    .text                 ro code       0x15ac   0xd50  em_cmu.o [8]
+    text_core_timecritical4331
+                          ro code       0x22fc     0x8  sl_core_cortexm.o [5]
+    text_sleeptimer_timecritical5462
+                          ro code       0x2304     0xc  sl_sleeptimer_hal_rtcc.o [18]
+    text_core_timecritical2307
+                          ro code       0x2310     0xa  sl_core_cortexm.o [5]
+    text_system_timecritical19213
+                          ro code       0x231c     0xc  system_bgm22.o [4]
+    text_system_timecritical17186
+                          ro code       0x2328     0x4  em_cmu.o [8]
+    text_system_timecritical16169
+                          ro code       0x232c    0x24  system_bgm22.o [4]
+    .text                 ro code       0x2350   0x1fc  em_emu.o [8]
+    .text                 ro code       0x254c    0x8c  system_bgm22.o [4]
+    text_system_timecritical23222
+                          ro code       0x25d8     0xc  system_bgm22.o [4]
+    text_system_timecritical22220
+                          ro code       0x25e4     0x8  system_bgm22.o [4]
+    text_system_timecritical24225
+                          ro code       0x25ec     0x8  system_bgm22.o [4]
+    text_system_timecritical25227
+                          ro code       0x25f4     0xc  system_bgm22.o [4]
+    text_system_timecritical26230
+                          ro code       0x2600     0x6  system_bgm22.o [4]
+    text_system_timecritical27232
+                          ro code       0x2606     0x6  system_bgm22.o [4]
+    text_system_timecritical21218
+                          ro code       0x260c     0x8  system_bgm22.o [4]
+    .text                 ro code       0x2614     0x2  em_emu.o [8]
+    .text                 ro code       0x2616     0x2  em_emu.o [8]
+    .text                 ro code       0x2618    0x78  sl_main_init.o [17]
+    .text                 ro code       0x2690    0x20  sl_event_handler.o [2]
+    .text                 ro code       0x26b0    0x10  em_system.o [8]
+    .text                 ro code       0x26c0     0x2  sl_main_init.o [17]
+    .text                 ro code       0x26c4    0x20  sl_device_init_dcdc_s2.o [11]
+    .text                 ro code       0x26e4     0x4  sl_clock_manager_init.o [10]
+    .text                 ro code       0x26e8    0x2c  sl_device_init_emu_s2.o [11]
+    .text                 ro code       0x2714     0x2  sl_main_init.o [17]
+    .text                 ro code       0x2716    0x1a  sl_main_init_memory.o [17]
+    .text                 ro code       0x2730     0x4  sl_clock_manager.o [10]
+    .text                 ro code       0x2734   0x158  sl_gpio.o [6]
+    .text                 ro code       0x288c   0x178  sl_clock_manager_init_hal_s2.o [10]
+    .text                 ro code       0x2a04    0x14  memset.o [22]
+    .text                 ro code       0x2a18     0x2  sl_main_init_memory.o [17]
+    .text                 ro code       0x2a1c   0x1e4  sl_hal_gpio.o [9]
+    text_hal_gpio_timecritical28429
+                          ro code       0x2c00    0x74  sl_hal_gpio.o [9]
+    .text                 ro code       0x2c74   0x1c0  em_ldma.o [8]
+    .text                 ro code       0x2e34    0xc4  em_pdm.o [8]
+    .text                 ro code       0x2ef8   0x170  dmadrv.o [7]
+    .text                 ro code       0x3068    0x46  startup_bgm22.o [4]
+    .text                 ro code       0x30ae     0xc  cstartup_M.o [22]
+    .text                 ro code       0x30bc    0x22  fpinit_M.o [21]
+    .text                 ro code       0x30e0    0x1e  cmain.o [22]
+    .text                 ro code       0x30fe     0x4  low_level_init.o [20]
+    .text                 ro code       0x3104    0x28  data_init.o [22]
+    .text                 ro code       0x312c    0x14  main.o [1]
+    .text                 ro code       0x3140     0x4  exit.o [20]
+    .text                 ro code       0x3144   0x142  app.o [1]
+    .text                 ro code       0x3286    0x16  sl_main_process_action.o [17]
+    .text                 ro code       0x329c     0xa  cexit.o [22]
+    .text                 ro code       0x32a8   0x3e4  sl_mic_pdm.o [3]
+    .text                 ro code       0x368c     0xc  XXexit.o [22]
+    .text                 ro code       0x3698    0x16  math_wrappers64.o [21]
+    .text                 ro code       0x36b0    0x68  DblToFlt.o [21]
+    .text                 ro code       0x3718    0xa4  log10f.o [21]
+    text_sleeptimer_timecritical60780
+                          ro code       0x37bc    0x2e  sl_mic_pdm.o [3]
+    text_dmadrv_timecritical28166
+                          ro code       0x37ec    0x40  dmadrv.o [7]
+    .text                 ro code       0x382c   0x6ec  pow64.o [21]
+    .text                 ro code       0x3f18    0xc0  logf.o [21]
+    text_sleeptimer_timecritical40706
+                          ro code       0x3fd8    0x34  sl_sleeptimer.o [18]
+    text_sleeptimer_timecritical28161
+                          ro code       0x400c    0x4e  sl_sleeptimer.o [18]
+    .text                 ro code       0x405c    0x20  DblCmpEq.o [21]
+    .text                 ro code       0x407c    0x70  frexp.o [21]
+    .text                 ro code       0x40ec    0x2e  DblCmpLe.o [21]
+    .text                 ro code       0x411c   0x1a2  DblMul.o [21]
+    .text                 ro code       0x42c0   0x17a  DblAdd.o [21]
+    .text                 ro code       0x443c    0x3a  DblToS32.o [21]
+    .text                 ro code       0x4478    0x22  S32ToDbl.o [21]
+    .text                 ro code       0x449c    0xe2  DblSub.o [21]
+    .text                 ro code       0x4580   0x246  DblDiv.o [21]
+    .text                 ro code       0x47c8    0x2e  DblCmpGe.o [21]
+    .text                 ro code       0x47f8   0x3e8  iar_Exp64.o [21]
+    text_sleeptimer_timecritical33276
+                          ro code       0x4be0    0x3c  sl_sleeptimer.o [18]
+    text_sleeptimer_timecritical71140
+                          ro code       0x4c1c    0x70  sl_sleeptimer.o [18]
+    .text                 ro code       0x4c8c   0x13a  ldexp.o [21]
+    .text                 ro code       0x4dc6    0x38  packbits_init_single.o [22]
+    .iar.init_table       const         0x4e00    0x20  - Linker created -
+    .rodata               const         0x4e20     0x0  zero_init3.o [22]
+    .rodata               const         0x4e20     0x0  packbits_init_single.o [22]
+    Initializer bytes     const         0x4e20    0x48  <for rw-1>
+                                      - 0x4e68  0x4e68
+
+"application", part 2 of 2:                        0x0
+  text_ram_init                         0x4e68     0x0  <Block>
+
+"storage_regions":                                 0x0
+  storage                             0x5'6000     0x0  <Block>
+  nvm                                 0x5'6000     0x0  <Block>
+
+"application_ram":                              0x2d0c
+  application_ram                  0x2000'0000  0x2d0c  <Block>
+    CSTACK                         0x2000'0000  0x1000  <Block>
+      .stack              uninit   0x2000'0000  0x1000  sl_memory_manager_region.o [16]
+    rw-1                           0x2000'1000    0x9b  <Init block>
+      .data               inited   0x2000'1000     0x4  system_bgm22.o [4]
+      .data               inited   0x2000'1004     0x4  system_bgm22.o [4]
+      .data               inited   0x2000'1008     0x4  system_bgm22.o [4]
+      .data               inited   0x2000'100c     0x4  system_bgm22.o [4]
+      .data               inited   0x2000'1010    0x78  sl_mic_pdm.o [3]
+      .data               inited   0x2000'1088     0x8  app.o [1]
+      .data               inited   0x2000'1090     0x8  app.o [1]
+      .data               inited   0x2000'1098     0x2  em_cmu.o [8]
+      .data               inited   0x2000'109a     0x1  sl_sleeptimer_hal_rtcc.o [18]
+    .bss                  zero     0x2000'109c   0x9c8  SEGGER_RTT.o [19]
+    .bss                  zero     0x2000'1a64    0x18  sl_sleeptimer.o [18]
+    .bss                  zero     0x2000'1a7c    0x80  dmadrv.o [7]
+    .bss                  zero     0x2000'1afc   0x100  dmadrv.o [7]
+    .bss                  zero     0x2000'1bfc   0x168  sl_gpio.o [6]
+    .bss                  zero     0x2000'1d64   0xfa0  app.o [1]
+    .bss                  zero     0x2000'2d04     0x1  sl_interrupt_manager_cortexm.o [15]
+    .bss                  zero     0x2000'2d05     0x1  em_cmu.o [8]
+    .bss                  zero     0x2000'2d06     0x1  em_cmu.o [8]
+    .bss                  zero     0x2000'2d07     0x1  em_emu.o [8]
+    .bss                  zero     0x2000'2d08     0x1  dmadrv.o [7]
+                                 - 0x2000'2d0c  0x2d0c
+
+"ram_code":                                        0x0
+  text_ram                         0x2000'2d10     0x0  <Block>
+
+Unused ranges:
+
+         From           To    Size
+         ----           --    ----
+  0x2000'2d0c  0x2000'2d0f     0x4
+  0x2000'2d10  0x2000'7fff  0x52f0
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x1c6d:
+          0x2000'109c  0x1c6d
+
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0x48 (46% of destination):
+               0x4e20    0x48
+    1 destination range, total size 0x9b:
+          0x2000'1000    0x9b
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                                ro code  ro data  rw data
+    ------                                -------  -------  -------
+command line/config:
+    ---------------------------------------------------------------
+    Total:
+
+C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug: [1]
+    app.o                                     322        7    4'016
+    main.o                                     20
+    ---------------------------------------------------------------
+    Total:                                    342        7    4'016
+
+C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\autogen: [2]
+    sl_event_handler.o                         32
+    ---------------------------------------------------------------
+    Total:                                     32
+
+C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\hardware\driver\mic\src: [3]
+    sl_mic_pdm.o                            1'042       56      120
+    ---------------------------------------------------------------
+    Total:                                  1'042       56      120
+
+C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\Device\SiliconLabs\BGM22\Source: [4]
+    startup_bgm22.o                            70      320
+    system_bgm22.o                            308        7       16
+    ---------------------------------------------------------------
+    Total:                                    378      327       16
+
+C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\common\src: [5]
+    sl_assert.o                                 2
+    sl_core_cortexm.o                          40
+    ---------------------------------------------------------------
+    Total:                                     42
+
+C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\driver\gpio\src: [6]
+    sl_gpio.o                                 344               360
+    ---------------------------------------------------------------
+    Total:                                    344               360
+
+C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\emdrv\dmadrv\src: [7]
+    dmadrv.o                                  432               385
+    ---------------------------------------------------------------
+    Total:                                    432               385
+
+C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\emlib\src: [8]
+    em_cmu.o                                3'412        1        4
+    em_emu.o                                  512                 1
+    em_ldma.o                                 448
+    em_pdm.o                                  196
+    em_rtcc.o                                 292
+    em_system.o                                16
+    ---------------------------------------------------------------
+    Total:                                  4'876        1        5
+
+C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\peripheral\src: [9]
+    sl_hal_gpio.o                             600
+    ---------------------------------------------------------------
+    Total:                                    600
+
+C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\service\clock_manager\src: [10]
+    sl_clock_manager.o                         22
+    sl_clock_manager_hal_s2.o                 298
+    sl_clock_manager_init.o                     4
+    sl_clock_manager_init_hal_s2.o            376       40
+    ---------------------------------------------------------------
+    Total:                                    700       40
+
+C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\service\device_init\src: [11]
+    sl_device_init_dcdc_s2.o                   32
+    sl_device_init_emu_s2.o                    44
+    ---------------------------------------------------------------
+    Total:                                     76
+
+C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\service\device_manager\clocks: [12]
+    sl_device_clock_efr32xg22.o                         16
+    ---------------------------------------------------------------
+    Total:                                              16
+
+C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\service\device_manager\devices: [13]
+    sl_device_peripheral_hal_efr32xg22.o                24
+    ---------------------------------------------------------------
+    Total:                                              24
+
+C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\service\device_manager\src: [14]
+    sl_device_peripheral.o                      4
+    ---------------------------------------------------------------
+    Total:                                      4
+
+C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\service\interrupt_manager\src: [15]
+    sl_interrupt_manager_cortexm.o            284                 1
+    ---------------------------------------------------------------
+    Total:                                    284                 1
+
+C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\service\memory_manager\src: [16]
+    sl_memory_manager_region.o                                4'096
+    ---------------------------------------------------------------
+    Total:                                                    4'096
+
+C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\service\sl_main\src: [17]
+    sl_main_init.o                            124
+    sl_main_init_memory.o                      28
+    sl_main_process_action.o                   22
+    ---------------------------------------------------------------
+    Total:                                    174
+
+C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\service\sleeptimer\src: [18]
+    sl_sleeptimer.o                         1'018                24
+    sl_sleeptimer_hal_rtcc.o                  556        1        1
+    ---------------------------------------------------------------
+    Total:                                  1'574        1       25
+
+C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\util\third_party\segger\systemview\SEGGER: [19]
+    SEGGER_RTT.o                              452             2'504
+    SEGGER_RTT_printf.o                       868
+    ---------------------------------------------------------------
+    Total:                                  1'320             2'504
+
+dl7M_tln.a: [20]
+    exit.o                                      4
+    low_level_init.o                            4
+    ---------------------------------------------------------------
+    Total:                                      8
+
+m7M_tls.a: [21]
+    DblAdd.o                                  378
+    DblCmpEq.o                                 32
+    DblCmpGe.o                                 46
+    DblCmpLe.o                                 46
+    DblDiv.o                                  582
+    DblMul.o                                  418
+    DblSub.o                                  226
+    DblToFlt.o                                104
+    DblToS32.o                                 58
+    S32ToDbl.o                                 34
+    fpinit_M.o                                 34
+    frexp.o                                   112
+    iar_Exp64.o                             1'000
+    ldexp.o                                   314
+    log10f.o                                  164
+    logf.o                                    192       68
+    math_wrappers64.o                          22
+    pow64.o                                 1'772    1'056
+    ---------------------------------------------------------------
+    Total:                                  5'534    1'124
+
+rt7M_tl.a: [22]
+    ABImemclr.o                                 6
+    ABImemcpy_small.o                          24
+    ABImemset.o                               102
+    I64DivMod_small.o                         262
+    I64DivZer.o                                 2
+    XXexit.o                                   12
+    cexit.o                                    10
+    cmain.o                                    30
+    cstartup_M.o                               12
+    data_init.o                                40
+    memset.o                                   20
+    packbits_init_single.o                     56
+    zero_init3.o                               58
+    ---------------------------------------------------------------
+    Total:                                    634
+
+    Gaps                                       46        2        1
+    Linker created                                      32
+-------------------------------------------------------------------
+    Grand Total:                           18'442    1'630   11'529
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address    Size  Type      Object
+-----                       -------    ----  ----      ------
+.iar.init_table$$Base        0x4e00           --   Gb  - Linker created -
+.iar.init_table$$Limit       0x4e20           --   Gb  - Linker created -
+?main                        0x30e1          Code  Gb  cmain.o [22]
+BUS_RegBitWrite              0x13f9    0x2c  Code  Lc  sl_clock_manager_hal_s2.o [10]
+CMU_ClockDivGet              0x15cf    0x76  Code  Gb  em_cmu.o [8]
+CMU_ClockDivSet              0x1645    0xda  Code  Gb  em_cmu.o [8]
+CMU_ClockEnable              0x2299    0x64  Code  Wk  em_cmu.o [8]
+CMU_ClockFreqGet             0x171f   0x160  Code  Gb  em_cmu.o [8]
+CMU_ClockSelectGet           0x1881   0x104  Code  Gb  em_cmu.o [8]
+CMU_HFRCODPLLBandSet         0x1a25   0x102  Code  Gb  em_cmu.o [8]
+CMU_HFXOCTuneDeltaGet        0x1ce7     0xa  Code  Gb  em_cmu.o [8]
+CMU_HFXOInit                 0x1b45   0x1a2  Code  Gb  em_cmu.o [8]
+CMU_HFXOPrecisionSet         0x1cf7     0x8  Code  Gb  em_cmu.o [8]
+CMU_LFRCOSetPrecision        0x1d09    0x6a  Code  Gb  em_cmu.o [8]
+CMU_UpdateWaitStates         0x1d91     0xa  Code  Gb  em_cmu.o [8]
+CORE_EnterAtomic              0xc35     0xc  Code  Wk  sl_core_cortexm.o [5]
+CORE_EnterCritical           0x22fd     0x8  Code  Wk  sl_core_cortexm.o [5]
+CORE_ExitAtomic               0xda9     0xa  Code  Wk  sl_core_cortexm.o [5]
+CORE_ExitCritical            0x2311     0xa  Code  Wk  sl_core_cortexm.o [5]
+CSTACK$$Base            0x2000'0000          Data  Gb  - Linker created -
+CSTACK$$Limit           0x2000'1000          Data  Gb  - Linker created -
+CopyMemory                   0x3069    0x14  Code  Gb  startup_bgm22.o [4]
+CopyToRam                    0x307d     0xc  Code  Gb  startup_bgm22.o [4]
+DMADRV_AllocateChannel       0x2ef9    0x50  Code  Gb  dmadrv.o [7]
+DMADRV_Init                  0x2f53    0x50  Code  Gb  dmadrv.o [7]
+DMADRV_LdmaStartTransfer
+                             0x2fa3    0x30  Code  Gb  dmadrv.o [7]
+DMADRV_StopTransfer          0x37ed    0x40  Code  Gb  dmadrv.o [7]
+Default_Handler              0x30ad     0x2  Code  Gb  startup_bgm22.o [4]
+EMU_DCDCInit                 0x24a9    0x68  Code  Gb  em_emu.o [8]
+EMU_DCDCModeSet              0x2421    0x88  Code  Gb  em_emu.o [8]
+EMU_EM4Init                  0x2351    0x12  Code  Gb  em_emu.o [8]
+EMU_VScaleEM01               0x2389    0x98  Code  Gb  em_emu.o [8]
+EMU_VScaleEM01ByClock        0x2365    0x24  Code  Gb  em_emu.o [8]
+EMU_VScaleGet                0x15b9    0x16  Code  Lc  em_cmu.o [8]
+GPIO_EVEN_IRQHandler         0x2843     0xe  Code  Gb  sl_gpio.o [6]
+GPIO_ODD_IRQHandler          0x2851     0xc  Code  Gb  sl_gpio.o [6]
+HFRCODPLLDevinfoGet          0x1fe1    0x9a  Code  Lc  em_cmu.o [8]
+LDMA_IRQHandler              0x2fdb    0x5e  Code  Gb  dmadrv.o [7]
+LDMA_Init                    0x2c75    0x88  Code  Gb  em_ldma.o [8]
+LDMA_StartTransfer           0x2cfd    0xd0  Code  Gb  em_ldma.o [8]
+LDMA_StopTransfer            0x2dd3    0x28  Code  Gb  em_ldma.o [8]
+PDM_Clear                    0x2e35     0xe  Code  Lc  em_pdm.o [8]
+PDM_FifoFlush                0x2e43     0xe  Code  Lc  em_pdm.o [8]
+PDM_Init                     0x2e51    0x9a  Code  Gb  em_pdm.o [8]
+RTCC_ChannelInit              0xee5    0x3e  Code  Gb  em_rtcc.o [8]
+RTCC_Enable                   0xf23    0x4e  Code  Gb  em_rtcc.o [8]
+RTCC_IRQHandler               0xcf3    0x34  Code  Gb  sl_sleeptimer_hal_rtcc.o [18]
+RTCC_Init                     0xf71    0x54  Code  Gb  em_rtcc.o [8]
+RTCC_Stop                     0xed5     0xe  Code  Lc  em_rtcc.o [8]
+RTCC_SyncWait                 0xec5    0x10  Code  Lc  em_rtcc.o [8]
+Region$$Table$$Base          0x4e00           --   Gb  - Linker created -
+Region$$Table$$Limit         0x4e20           --   Gb  - Linker created -
+Reset_Handler                0x3089    0x14  Code  Gb  startup_bgm22.o [4]
+SEGGER_RTT_Write              0x757    0x1e  Code  Gb  SEGGER_RTT.o [19]
+SEGGER_RTT_WriteNoLock        0x6f5    0x3e  Code  Gb  SEGGER_RTT.o [19]
+SEGGER_RTT_printf             0xbb9    0x14  Code  Gb  SEGGER_RTT_printf.o [19]
+SEGGER_RTT_vprintf            0x985   0x222  Code  Gb  SEGGER_RTT_printf.o [19]
+SL_BUS_CLOCK_GPIO_VALUE
+                              0x578     0x4  Data  Gb  sl_device_clock_efr32xg22.o [12]
+SL_BUS_CLOCK_LFRCO_VALUE
+                              0x57c     0x4  Data  Gb  sl_device_clock_efr32xg22.o [12]
+SL_BUS_CLOCK_PDM_VALUE        0x580     0x4  Data  Gb  sl_device_clock_efr32xg22.o [12]
+SL_BUS_CLOCK_RTCC_VALUE
+                              0x584     0x4  Data  Gb  sl_device_clock_efr32xg22.o [12]
+SYSTEM_GetProdRev            0x26b1     0xa  Code  Gb  em_system.o [8]
+SystemCLKIN0Get              0x25ed     0x8  Code  Gb  system_bgm22.o [4]
+SystemCoreClock         0x2000'100c     0x4  Data  Gb  system_bgm22.o [4]
+SystemCoreClockGet           0x2329     0x4  Code  Lc  em_cmu.o [8]
+SystemFSRCOClockGet          0x25e5     0x8  Code  Gb  system_bgm22.o [4]
+SystemHCLKGet                0x232d    0x24  Code  Gb  system_bgm22.o [4]
+SystemHFRCODPLLClock    0x2000'1008     0x4  Data  Lc  system_bgm22.o [4]
+SystemHFRCODPLLClockGet
+                             0x231d     0xc  Code  Gb  system_bgm22.o [4]
+SystemHFRCODPLLClockSet
+                             0x2599     0x6  Code  Gb  system_bgm22.o [4]
+SystemHFXOClock         0x2000'1000     0x4  Data  Lc  system_bgm22.o [4]
+SystemHFXOClockGet           0x25d9     0xc  Code  Gb  system_bgm22.o [4]
+SystemHFXOClockSet           0x259f    0x16  Code  Gb  system_bgm22.o [4]
+SystemInit                   0x254d    0x4c  Code  Gb  system_bgm22.o [4]
+SystemLFRCOClockGet          0x2601     0x6  Code  Gb  system_bgm22.o [4]
+SystemLFXOClock         0x2000'1004     0x4  Data  Lc  system_bgm22.o [4]
+SystemLFXOClockGet           0x25f5     0xc  Code  Gb  system_bgm22.o [4]
+SystemMaxCoreClockGet        0x260d     0x8  Code  Gb  system_bgm22.o [4]
+SystemSYSCLKGet              0x1571    0x3c  Code  Gb  system_bgm22.o [4]
+SystemULFRCOClockGet         0x2607     0x6  Code  Gb  system_bgm22.o [4]
+_DoInit                       0x5f5    0x5c  Code  Lc  SEGGER_RTT.o [19]
+_DoInit::_aInitStr            0x7a4    0x14  Data  Lc  SEGGER_RTT.o [19]
+_GetAvailWriteSpace           0x6df    0x16  Code  Lc  SEGGER_RTT.o [19]
+_PrintUnsigned                0x8b9    0xcc  Code  Lc  SEGGER_RTT_printf.o [19]
+_PrintUnsigned::_aV2C         0xbcc    0x10  Data  Lc  SEGGER_RTT_printf.o [19]
+_SEGGER_RTT             0x2000'109c   0x1c8  Data  Gb  SEGGER_RTT.o [19]
+_StoreChar                    0x879    0x3e  Code  Lc  SEGGER_RTT_printf.o [19]
+_WriteBlocking                0x651    0x54  Code  Lc  SEGGER_RTT.o [19]
+_WriteNoCheck                 0x6a5    0x3a  Code  Lc  SEGGER_RTT.o [19]
+__aeabi_cdcmpeq              0x405d          Code  Gb  DblCmpEq.o [21]
+__aeabi_cdcmple              0x40ed          Code  Gb  DblCmpLe.o [21]
+__aeabi_cdrcmple             0x47c9          Code  Gb  DblCmpGe.o [21]
+__aeabi_d2f                  0x36b1          Code  Gb  DblToFlt.o [21]
+__aeabi_d2iz                 0x443d          Code  Gb  DblToS32.o [21]
+__aeabi_dadd                 0x42c1          Code  Gb  DblAdd.o [21]
+__aeabi_ddiv                 0x4581          Code  Gb  DblDiv.o [21]
+__aeabi_dmul                 0x411d          Code  Gb  DblMul.o [21]
+__aeabi_dsub                 0x449d          Code  Gb  DblSub.o [21]
+__aeabi_i2d                  0x4479          Code  Gb  S32ToDbl.o [21]
+__aeabi_ldiv0                0x11a1          Code  Gb  I64DivZer.o [22]
+__aeabi_memclr                0x7b9          Code  Gb  ABImemclr.o [22]
+__aeabi_memset                0x811          Code  Gb  ABImemset.o [22]
+__cmain                      0x30e1          Code  Gb  cmain.o [22]
+__exit                       0x368d          Code  Gb  XXexit.o [22]
+__iar_Exp64                  0x47f9   0x388  Code  Gb  iar_Exp64.o [21]
+__iar_Memset                  0x811          Code  Gb  ABImemset.o [22]
+__iar_Memset_word             0x819          Code  Gb  ABImemset.o [22]
+__iar_dadd                   0x44ad          Code  Gb  DblSub.o [21]
+__iar_data_init3             0x3105    0x28  Code  Gb  data_init.o [22]
+__iar_dsub                   0x42d1          Code  Gb  DblAdd.o [21]
+__iar_dsubStart              0x42e3          Code  Gb  DblAdd.o [21]
+__iar_frexp                  0x4089          Code  Gb  frexp.o [21]
+__iar_frexpl                 0x4089          Code  Gb  frexp.o [21]
+__iar_init_vfp               0x30bd          Code  Gb  fpinit_M.o [21]
+__iar_ldexp64                0x4c8d          Code  Gb  ldexp.o [21]
+__iar_log10_32               0x3719          Code  Gb  log10f.o [21]
+__iar_log10_medium32         0x3719          Code  Gb  log10f.o [21]
+__iar_log10_mediumf          0x3719          Code  Gb  log10f.o [21]
+__iar_log32                  0x3f19          Code  Gb  logf.o [21]
+__iar_log_medium32           0x3f19          Code  Gb  logf.o [21]
+__iar_log_mediumf            0x3f19          Code  Gb  logf.o [21]
+__iar_logf_NoFini            0x3fb1          Code  Gb  logf.o [21]
+__iar_logf_ZerNeg            0x3fc5          Code  Gb  logf.o [21]
+__iar_logf_cTab               0x5b0          Data  Gb  logf.o [21]
+__iar_packbits_init_single3
+                             0x4dc7    0x38  Code  Gb  packbits_init_single.o [22]
+__iar_pow64                  0x382d   0x6ec  Code  Gb  pow64.o [21]
+__iar_pow_medium             0x382d   0x6ec  Code  Gb  pow64.o [21]
+__iar_pow_medium64           0x382d   0x6ec  Code  Gb  pow64.o [21]
+__iar_pow_mediuml            0x382d   0x6ec  Code  Gb  pow64.o [21]
+__iar_program_start          0x30af          Code  Gb  cstartup_M.o [22]
+__iar_safe_logf              0x3f39          Code  Gb  logf.o [21]
+__iar_scalbln64              0x4c8d          Code  Gb  ldexp.o [21]
+__iar_scalbn64               0x4c8d          Code  Gb  ldexp.o [21]
+__iar_small_Memcpy            0x7fd          Code  Gb  ABImemcpy_small.o [22]
+__iar_small_memcpy            0x7f9          Code  Gb  ABImemcpy_small.o [22]
+__iar_small_memcpy4           0x7f9          Code  Gb  ABImemcpy_small.o [22]
+__iar_small_memcpy8           0x7f9          Code  Gb  ABImemcpy_small.o [22]
+__iar_small_uldivmod          0xdb5          Code  Gb  I64DivMod_small.o [22]
+__iar_softfp___iar_frexp64
+                             0x407d          Code  Gb  frexp.o [21]
+__iar_softfp_frexp           0x407d          Code  Gb  frexp.o [21]
+__iar_softfp_frexpl          0x407d          Code  Gb  frexp.o [21]
+__iar_vfp_pow                0x369f    0x10  Code  Gb  math_wrappers64.o [21]
+__iar_zero_init3              0x7bf    0x3a  Code  Gb  zero_init3.o [22]
+__low_level_init             0x30ff     0x4  Code  Gb  low_level_init.o [20]
+__vector_table                  0x0   0x140  Data  Gb  startup_bgm22.o [4]
+_acDownBuffer           0x2000'1664   0x400  Data  Lc  SEGGER_RTT.o [19]
+_acUpBuffer             0x2000'1264   0x400  Data  Lc  SEGGER_RTT.o [19]
+_call_main                   0x30ed          Code  Gb  cmain.o [22]
+_exit                        0x329d          Code  Gb  cexit.o [22]
+_main                        0x30fb          Code  Gb  cmain.o [22]
+alpha                   0x2000'108c     0x4  Data  Gb  app.o [1]
+alpha_hp                0x2000'1094     0x4  Data  Gb  app.o [1]
+app_init                     0x3219     0xa  Code  Gb  app.o [1]
+app_process_action           0x3223    0x48  Code  Gb  app.o [1]
+application$$Base               0x0           --   Gb  - Linker created -
+application$$Limit           0x4e68           --   Gb  - Linker created -
+application_ram$$Base   0x2000'0000           --   Gb  - Linker created -
+application_ram$$Limit  0x2000'2d0c           --   Gb  - Linker created -
+assertEFM                     0xebb     0x2  Code  Gb  sl_assert.o [5]
+band_pass_filter             0x31d3    0x46  Code  Gb  app.o [1]
+buffer                  0x2000'1d64   0xfa0  Data  Lc  app.o [1]
+buffer_ready_callback   0x2000'1040     0x4  Data  Lc  sl_mic_pdm.o [3]
+cc_disabled             0x2000'109a     0x1  Data  Lc  sl_sleeptimer_hal_rtcc.o [18]
+chTable                 0x2000'1a7c    0x80  Data  Lc  dmadrv.o [7]
+create_timer                 0x4c1d    0x70  Code  Lc  sl_sleeptimer.o [18]
+ctuneDelta              0x2000'2d05     0x1  Data  Lc  em_cmu.o [8]
+delta_list_insert_timer
+                             0x1525    0x4c  Code  Lc  sl_sleeptimer.o [18]
+delta_list_remove_timer
+                             0x14e9    0x3c  Code  Lc  sl_sleeptimer.o [18]
+discard_buffer          0x2000'1054     0x4  Data  Lc  sl_mic_pdm.o [3]
+dmaXfer                 0x2000'1afc   0x100  Data  Lc  dmadrv.o [7]
+dma_channel_id          0x2000'1050     0x4  Data  Lc  sl_mic_pdm.o [3]
+dma_complete                 0x356d    0xc4  Code  Lc  sl_mic_pdm.o [3]
+dma_descriptor          0x2000'1018    0x20  Data  Lc  sl_mic_pdm.o [3]
+dma_transfer_cfg        0x2000'1058    0x10  Data  Lc  sl_mic_pdm.o [3]
+dpllRefClkGet                0x1e55    0x42  Code  Lc  em_cmu.o [8]
+em01GrpaClkGet               0x1ea1    0x44  Code  Lc  em_cmu.o [8]
+em01GrpbClkGet               0x1d9d    0x6c  Code  Lc  em_cmu.o [8]
+em23GrpaClkGet               0x1ee5    0x44  Code  Lc  em_cmu.o [8]
+em4GrpaClkGet                0x1f41    0x44  Code  Lc  em_cmu.o [8]
+euart0ClkGet                 0x1e09    0x30  Code  Lc  em_cmu.o [8]
+exit                         0x3141     0x4  Code  Gb  exit.o [20]
+flashWaitStateControl        0x1f85    0x50  Code  Lc  em_cmu.o [8]
+gpio_interrupts         0x2000'1bfc   0x168  Data  Lc  sl_gpio.o [6]
+hfxo_precision          0x2000'1098     0x2  Data  Lc  em_cmu.o [8]
+high_pass_filter             0x318f    0x44  Code  Gb  app.o [1]
+high_pass_filter::prev_input
+                        0x2000'1090     0x2  Data  Lc  app.o [1]
+high_pass_filter::prev_output
+                        0x2000'1092     0x2  Data  Lc  app.o [1]
+iadcClkGet                   0x207d    0x4c  Code  Lc  em_cmu.o [8]
+initialized             0x2000'2d08     0x1  Data  Lc  dmadrv.o [7]
+initialized             0x2000'1014     0x1  Data  Lc  sl_mic_pdm.o [3]
+is_interrupt_manager_initialized
+                        0x2000'2d04     0x1  Data  Lc  sl_interrupt_manager_cortexm.o [15]
+is_sleeptimer_initialized
+                        0x2000'1a64     0x1  Data  Lc  sl_sleeptimer.o [18]
+last_delta_update_count
+                        0x2000'1a74     0x4  Data  Lc  sl_sleeptimer.o [18]
+ldexp                        0x4c8d          Code  Gb  ldexp.o [21]
+ldexpl                       0x4c8d          Code  Gb  ldexp.o [21]
+lnbias                        0x140   0x420  Data  Lc  pow64.o [21]
+log10f                       0x3719          Code  Gb  log10f.o [21]
+logf                         0x3f19          Code  Gb  logf.o [21]
+low_pass_filter              0x3145    0x4a  Code  Gb  app.o [1]
+low_pass_filter::prev_output
+                        0x2000'1088     0x2  Data  Lc  app.o [1]
+main                         0x312d    0x14  Code  Gb  main.o [1]
+max_millisecond_conversion
+                        0x2000'1a78     0x4  Data  Lc  sl_sleeptimer.o [18]
+memset                       0x2a05    0x14  Code  Gb  memset.o [22]
+mic_ready               0x2000'1013     0x1  Data  Lc  sl_mic_pdm.o [3]
+mic_running             0x2000'1012     0x1  Data  Lc  sl_mic_pdm.o [3]
+mic_wake_up_timer       0x2000'1068    0x20  Data  Lc  sl_mic_pdm.o [3]
+next_timer_to_expire_is_power_manager
+                        0x2000'1a65     0x1  Data  Lc  sl_sleeptimer.o [18]
+num_channels            0x2000'1015     0x1  Data  Lc  sl_mic_pdm.o [3]
+nvm$$Base                  0x5'6000           --   Gb  - Linker created -
+nvm$$Limit                 0x5'6000           --   Gb  - Linker created -
+overflow_counter        0x2000'1a68     0x4  Data  Lc  sl_sleeptimer.o [18]
+pclkDiv                 0x2000'2d06     0x1  Data  Lc  em_cmu.o [8]
+pclkDivMax                   0x20c9     0xc  Code  Lc  em_cmu.o [8]
+pclkDivOptimize              0x20d5    0x22  Code  Lc  em_cmu.o [8]
+pow                          0x382d   0x6ec  Code  Gb  pow64.o [21]
+powl                         0x382d   0x6ec  Code  Gb  pow64.o [21]
+process_expired_timer        0x1241    0xb0  Code  Lc  sl_sleeptimer.o [18]
+process_timer_irq            0x1105    0x8c  Code  Gb  sl_sleeptimer.o [18]
+reading_samples_to_buffer
+                        0x2000'1010     0x1  Data  Lc  sl_mic_pdm.o [3]
+rhclkPrescOptimize           0x1e39    0x1c  Code  Lc  em_cmu.o [8]
+rtccClkGet                   0x2101    0x46  Code  Lc  em_cmu.o [8]
+sample_buffer           0x2000'1044     0x4  Data  Lc  sl_mic_pdm.o [3]
+sample_count            0x2000'104c     0x4  Data  Lc  sl_mic_pdm.o [3]
+sample_index            0x2000'1048     0x4  Data  Lc  sl_mic_pdm.o [3]
+scalbln                      0x4c8d          Code  Gb  ldexp.o [21]
+scalblnl                     0x4c8d          Code  Gb  ldexp.o [21]
+scalbn                       0x4c8d          Code  Gb  ldexp.o [21]
+scalbnl                      0x4c8d          Code  Gb  ldexp.o [21]
+set_comparator_for_next_timer
+                             0x1205    0x3c  Code  Lc  sl_sleeptimer.o [18]
+sl_clock_manager_enable_bus_clock
+                              0xebd     0x6  Code  Gb  sl_clock_manager.o [10]
+sl_clock_manager_get_clock_branch_frequency
+                             0x1195     0xc  Code  Gb  sl_clock_manager.o [10]
+sl_clock_manager_init        0x26e5     0x4  Code  Gb  sl_clock_manager_init.o [10]
+sl_clock_manager_runtime_init
+                             0x2731     0x4  Code  Gb  sl_clock_manager.o [10]
+sl_device_init_dcdc          0x26c5    0x18  Code  Gb  sl_device_init_dcdc_s2.o [11]
+sl_device_init_emu           0x26e9    0x2c  Code  Gb  sl_device_init_emu_s2.o [11]
+sl_device_peripheral_get_clock_branch
+                             0x1191     0x4  Code  Gb  sl_device_peripheral.o [14]
+sl_driver_init               0x269f     0x4  Code  Gb  sl_event_handler.o [2]
+sl_gpio_dispatch_interrupt
+                             0x2807    0x3c  Code  Lc  sl_gpio.o [6]
+sl_gpio_init                 0x2735    0x36  Code  Gb  sl_gpio.o [6]
+sl_gpio_set_pin_mode         0x276b    0x7a  Code  Gb  sl_gpio.o [6]
+sl_hal_bus_reg_write_mask
+                             0x2a8d    0x1e  Code  Lc  sl_hal_gpio.o [9]
+sl_hal_gpio_clear_pin        0x2a1d    0x6a  Code  Gb  sl_hal_gpio.o [9]
+sl_hal_gpio_set_pin          0x2c01    0x74  Code  Gb  sl_hal_gpio.o [9]
+sl_hal_gpio_set_pin_mode
+                             0x2aad   0x126  Code  Gb  sl_hal_gpio.o [9]
+sl_internal_app_init         0x26a7     0x2  Code  Gb  sl_event_handler.o [2]
+sl_interrupt_manager_clear_irq_pending
+                             0x1073    0x16  Code  Gb  sl_interrupt_manager_cortexm.o [15]
+sl_interrupt_manager_enable_irq
+                             0x101d    0x26  Code  Gb  sl_interrupt_manager_cortexm.o [15]
+sl_interrupt_manager_init
+                              0xfe9    0x32  Code  Gb  sl_interrupt_manager_cortexm.o [15]
+sl_interrupt_manager_is_irq_disabled
+                             0x1043    0x28  Code  Gb  sl_interrupt_manager_cortexm.o [15]
+sl_interrupt_manager_set_irq_priority
+                             0x1089    0x48  Code  Gb  sl_interrupt_manager_cortexm.o [15]
+sl_main_init                 0x2633    0x4e  Code  Gb  sl_main_init.o [17]
+sl_main_process_action       0x3287    0x16  Code  Gb  sl_main_process_action.o [17]
+sl_main_second_stage_init
+                             0x2619    0x1a  Code  Gb  sl_main_init.o [17]
+sl_mic_get_n_samples         0x3461    0x3c  Code  Gb  sl_mic_pdm.o [3]
+sl_mic_init                  0x32b5   0x1ac  Code  Gb  sl_mic_pdm.o [3]
+sl_mic_sample_buffer_ready
+                             0x354d     0xc  Code  Gb  sl_mic_pdm.o [3]
+sl_mic_start                 0x349d    0x80  Code  Gb  sl_mic_pdm.o [3]
+sl_mic_stop                  0x351d    0x30  Code  Gb  sl_mic_pdm.o [3]
+sl_peripheral_val_pdm         0x560     0xc  Data  Gb  sl_device_peripheral_hal_efr32xg22.o [13]
+sl_peripheral_val_rtcc        0x56c     0xc  Data  Gb  sl_device_peripheral_hal_efr32xg22.o [13]
+sl_platform_init             0x2699     0x4  Code  Gb  sl_event_handler.o [2]
+sl_service_init              0x26a3     0x2  Code  Gb  sl_event_handler.o [2]
+sl_sleeptimer_init            0xbdd    0x50  Code  Gb  sl_sleeptimer.o [18]
+sl_sleeptimer_is_timer_running
+                             0x4be1    0x3c  Code  Gb  sl_sleeptimer.o [18]
+sl_sleeptimer_ms32_to_tick
+                             0x3fd9    0x34  Code  Gb  sl_sleeptimer.o [18]
+sl_sleeptimer_start_timer
+                             0x400d    0x4e  Code  Gb  sl_sleeptimer.o [18]
+sl_sleeptimer_start_timer_ms
+                             0x37bd    0x2e  Code  Lc  sl_mic_pdm.o [3]
+sl_stack                0x2000'0000  0x1000  Data  Gb  sl_memory_manager_region.o [16]
+sl_stack_init                0x26a5     0x2  Code  Gb  sl_event_handler.o [2]
+sleep_on_isr_exit       0x2000'1a66     0x1  Data  Lc  sl_sleeptimer.o [18]
+sleeptimer_hal_disable_int
+                             0x1301    0x34  Code  Gb  sl_sleeptimer_hal_rtcc.o [18]
+sleeptimer_hal_enable_int
+                              0xd6d    0x1c  Code  Gb  sl_sleeptimer_hal_rtcc.o [18]
+sleeptimer_hal_get_compare
+                             0x2305     0xc  Code  Gb  sl_sleeptimer_hal_rtcc.o [18]
+sleeptimer_hal_get_counter
+                             0x1435    0x10  Code  Gb  sl_sleeptimer_hal_rtcc.o [18]
+sleeptimer_hal_get_timer_frequency
+                              0xd89    0x20  Code  Gb  sl_sleeptimer_hal_rtcc.o [18]
+sleeptimer_hal_init_timer
+                              0xc85    0x6e  Code  Gb  sl_sleeptimer_hal_rtcc.o [18]
+sleeptimer_hal_presc_to_log2
+                              0xc41    0x44  Code  Lc  sl_sleeptimer_hal_rtcc.o [18]
+sleeptimer_hal_set_compare
+                             0x1445    0x64  Code  Gb  sl_sleeptimer_hal_rtcc.o [18]
+sleeptimer_hal_set_int       0x14a9    0x10  Code  Gb  sl_sleeptimer_hal_rtcc.o [18]
+sli_allocate_permanent_memory
+                             0x2717    0x1a  Code  Gb  sl_main_init_memory.o [17]
+sli_clock_manager_hal_enable_bus_clock
+                             0x11a5    0x2c  Code  Gb  sl_clock_manager_hal_s2.o [10]
+sli_clock_manager_hal_get_clock_branch_frequency
+                             0x1335    0xc2  Code  Gb  sl_clock_manager_hal_s2.o [10]
+sli_clock_manager_hal_init
+                             0x288d   0x11c  Code  Gb  sl_clock_manager_init_hal_s2.o [10]
+sli_clock_manager_hal_runtime_init
+                             0x1425     0x4  Code  Gb  sl_clock_manager_hal_s2.o [10]
+sli_driver_permanent_allocation
+                             0x2691     0x2  Code  Gb  sl_event_handler.o [2]
+sli_em_cmu_SYSCLKInitPostClockSelect
+                             0x19b7    0x36  Code  Gb  em_cmu.o [8]
+sli_em_cmu_SYSCLKInitPreClockSelect
+                             0x1985    0x26  Code  Gb  em_cmu.o [8]
+sli_em_cmu_SYSTICEXTCLKENClear
+                             0x19f5    0x28  Code  Gb  em_cmu.o [8]
+sli_internal_app_process_action
+                             0x26af     0x2  Code  Gb  sl_event_handler.o [2]
+sli_internal_init_early
+                             0x269d     0x2  Code  Gb  sl_event_handler.o [2]
+sli_internal_permanent_allocation
+                             0x2697     0x2  Code  Gb  sl_event_handler.o [2]
+sli_platform_process_action
+                             0x26a9     0x2  Code  Gb  sl_event_handler.o [2]
+sli_service_permanent_allocation
+                             0x2693     0x2  Code  Gb  sl_event_handler.o [2]
+sli_service_process_action
+                             0x26ab     0x2  Code  Gb  sl_event_handler.o [2]
+sli_stack_permanent_allocation
+                             0x2695     0x2  Code  Gb  sl_event_handler.o [2]
+sli_stack_process_action
+                             0x26ad     0x2  Code  Gb  sl_event_handler.o [2]
+storage$$Base              0x5'6000           --   Gb  - Linker created -
+storage$$Limit             0x5'6000           --   Gb  - Linker created -
+streaming_buffer        0x2000'1038     0x8  Data  Lc  sl_mic_pdm.o [3]
+streaming_in_progress   0x2000'1011     0x1  Data  Lc  sl_mic_pdm.o [3]
+sysTickClkGet                0x21b1    0x34  Code  Lc  em_cmu.o [8]
+text_ram$$Base          0x2000'2d10           --   Gb  - Linker created -
+text_ram$$Length                0x0           --   Gb  - Linker created -
+text_ram$$Limit         0x2000'2d10           --   Gb  - Linker created -
+text_ram_init$$Base          0x4e68           --   Gb  - Linker created -
+text_ram_init$$Limit         0x4e68           --   Gb  - Linker created -
+timeout_callback             0x32a9     0xa  Code  Gb  sl_mic_pdm.o [3]
+timer_frequency         0x2000'1a6c     0x4  Data  Lc  sl_sleeptimer.o [18]
+timer_head              0x2000'1a70     0x4  Data  Lc  sl_sleeptimer.o [18]
+update_delta_list            0x11d1    0x34  Code  Lc  sl_sleeptimer.o [18]
+update_next_timer_to_expire_is_power_manager
+                             0x14b9    0x30  Code  Lc  sl_sleeptimer.o [18]
+vScaleEM01Config        0x2000'2d07     0x1  Data  Lc  em_emu.o [8]
+waitStateMax                 0x214d     0xe  Code  Lc  em_cmu.o [8]
+wdog0ClkGet                  0x215d    0x54  Code  Lc  em_cmu.o [8]
+
+
+[1] = C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug
+[2] = C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\autogen
+[3] = C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\hardware\driver\mic\src
+[4] = C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\Device\SiliconLabs\BGM22\Source
+[5] = C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\common\src
+[6] = C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\driver\gpio\src
+[7] = C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\emdrv\dmadrv\src
+[8] = C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\emlib\src
+[9] = C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\peripheral\src
+[10] = C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\service\clock_manager\src
+[11] = C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\service\device_init\src
+[12] = C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\service\device_manager\clocks
+[13] = C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\service\device_manager\devices
+[14] = C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\service\device_manager\src
+[15] = C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\service\interrupt_manager\src
+[16] = C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\service\memory_manager\src
+[17] = C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\service\sl_main\src
+[18] = C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\platform\service\sleeptimer\src
+[19] = C:\Users\huyvu\OneDrive - hcmut.edu.vn\Desktop\Freelance\MOX_Fw\mox_v1_ext\mox_v1.0\IAR ARM - Debug\simplicity_sdk_2025.6.2\util\third_party\segger\systemview\SEGGER
+[20] = dl7M_tln.a
+[21] = m7M_tls.a
+[22] = rt7M_tl.a
+
+  18'442 bytes of readonly  code memory
+   1'630 bytes of readonly  data memory
+  11'529 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
